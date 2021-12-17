@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Household</title>
+  </head>
+  <body>
+    <div class="row header">
+      <a class="waves-effect waves-light btn left menu sidenav-trigger" href="#" data-target="menu" ><i class="material-icons">menu</i></a>
+      <div class="col s4 offset-s5" id="title">Household appliances e-shop</div>
+    </div>
+    <div class="container">
+      <ul id="menu" class="sidenav">
+        <li><a class="waves-effect waves-light modal-trigger" href="#productsPage" ><i class="material-icons left">store</i>Products</a></li>
+        <li><a class="waves-effect waves-light modal-trigger" href="" ><i class="material-icons left">shopping_cart</i>Orders</a></li>
+      </ul>
+
+	  <a class="btn-floating btn-large waves-effect waves-light right" id="newOrder"><i class="material-icons">add</i></a>
+
+      <div class="" id="currentOrders">
+		  <div class="sectionName center"> My current orders</div>
+		<table class="currentOrders">
+			<thead>
+				<th>
+					Order ID
+				</th>
+				<th>
+					No. of products
+				</th>
+				<th>
+					Total Sum
+				</th>
+				<th>
+					Creation Date
+				</th>
+				<th>
+					Status
+				</th>
+			</thead>
+			<tbody id="orders">
+			</tbody>
+		</table>
+      </div>
+	  <div class="center">
+		<div class="preloader-wrapper big active">
+			<div class="spinner-layer spinner-blue">
+			<div class="circle-clipper left">
+				<div class="circle"></div>
+			</div><div class="gap-patch">
+				<div class="circle"></div>
+			</div><div class="circle-clipper right">
+				<div class="circle"></div>
+			</div>
+			</div>
+		</div>
+	</div>
+
+    </div>
+
+	<div class="modal" id="orderInfo">
+		<table >
+			<thead>
+				<th>
+					Order ID
+				</th>
+				<th>
+					No. of products
+				</th>
+				<th>
+					Total Sum
+				</th>
+				<th>
+					Creation Date
+				</th>
+				<th>
+					Status
+				</th>
+			</thead>
+			<tbody id="orderStuff"></tbody>
+		</table>
+		<table >
+			<thead>
+				<th>
+					Product
+				</th>
+				<th>
+					Price per unit
+				</th>
+				<th>
+					Quantity
+				</th>
+				<th>
+					Total price
+				</th>
+			</thead>
+			<tbody id="productInfo">
+			</tbody>
+		</table>
+
+		<a class="waves-effect waves-light btn" id="submitOrder">Submit order</a>
+
+	</div>
+
+
+
+
+
+    <div id="productsPage" class="modal ">
+
+		<div class="row" id="availableProducts">
+		</div>
+		<div class="productDetails row">
+			<div class="row">
+				<div class="col s2" id="productName"></div>
+				<div class="col s3" id="productPrice"></div>
+			</div>
+			<div class="row">
+				<div class="col s1" id="availability">Available: </div>
+				<div style="margin-left: 20px;" class="col s1" id="availableQuantity"></div>
+			</div>
+			<a class="btn-floating btn-large waves-effect waves-light right" id="addToOrder"><i class="material-icons">add</i></a>
+
+			<div class="input-field col s12 hidden" id="chosenOrderId">
+				<select>
+					<option value="" disabled selected></option>
+					<option value="1">Option 1</option>
+				</select>
+				<label>Choose the Order ID</label>
+			</div>
+			<p class="range-field hidden">
+				<label>Available quantity</label>
+				<input type="range" id="chosenQuantity" min="0" max="3" />
+			</p>
+			<a class="waves-effect waves-light btn hidden" id="addProduct">Add product</a>
+		</div>
+
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
